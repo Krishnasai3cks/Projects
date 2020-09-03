@@ -15,7 +15,8 @@
  
 ?>
 <html>
-<body>
- <a href='home.php'>click here </a> to go back to the newsfeed
-</body>
+<script>
+alert("tweet created");
+document.location.href="home.php";
+</script>
 </html>

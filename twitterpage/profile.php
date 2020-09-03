@@ -24,8 +24,38 @@
 	return $array;
  }
 ?>
-<html><head> <title> Twitter Clone </title> </head>
+<html><head> <title> Twitter Clone </title>
+<style>
+body{
+	background: url("https://images.pexels.com/photos/1903702/pexels-photo-1903702.jpeg?cs=srgb&dl=pexels-roberto-shumski-1903702.jpg&fm=jpg");
+	
+}
+#yourtweets{
+	    margin-top: 5px;
+		border: 2px solid black;
+		width: 100%;
+		text-align: center;
+}
+.bigindex{
+	min-height: 100%;
+
+background-color: pink;
+margin: auto;
+width: 50%;
+border: 3px solid black;
+padding: 10px;
+display: flex;
+flex-direction: column;
+justify-content: center;
+align-items: center;
+}
+a{
+ text-decoration: none;
+ font-size: 20px;
+}
+</style> </head>
 <body>
+ <div class="bigindex">
  <?php include('header.php'); ?>
  <div>
   <?php  
@@ -34,9 +64,9 @@
     if($a->a == 1){
 	 $recent_tweets = get_recent_tweets($conn);
 	 foreach($recent_tweets as $tweet){
-		 echo '<p><a href="profile.php?id=' . $tweet['authorId'] . '">' .$tweet['authorname'] .'</a></p>';
-		 echo '<p>' . $tweet['body'] . '</p>';
-		 echo '<p>' . $tweet['created']. '</p>';
+		 echo '<div id="yourtweets"><p><a href="profile.php?id=' . $tweet['authorId'] . '">' .$tweet['authorname'] .'</a></p>';
+		 echo '<p style="font-size: 25px">' . $tweet['body'] . '</p>';
+		 echo '<p>' . $tweet['created']. '</p></div>';
 		 echo '<hr>';
 	 }
 	}
@@ -46,6 +76,7 @@
 	}
 	
  ?>
+ </div>
  </div>
 </body>
 </html>

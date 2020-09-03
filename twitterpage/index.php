@@ -29,18 +29,66 @@
 <html>
 <head>
  <title> Twitter clone </title>
+ <style>
+ a{
+	 text-decoration: none;
+	 width: 100px;
+	 text-align: center;
+	 font-size: 20px;
+	 background-color: #C3423F;
+	 color: white;
+	 margin-top:  10px;
+ }
+  .form-div{
+	  display: flex;
+	  flex-direction: column;
+	  height: 100vh;
+	  justify-content: center;
+	  align-items: center;
+	  background-color: #404E4D;
+  }
+  form{
+	  background-color: #07004D;
+	  color: #F1FEC6;
+	  border: 4px solid blue;
+	  font: arial;
+  }
+  .login{
+	  margin-top: 10px;
+	  width: 100%;
+	  height: 30px;
+	  color: white;
+	  font-size: 20px;
+	  background-color: red; 
+  }
+  fieldset{
+	  border: none;
+  }
+  b{
+	  margin-bottom: 10px;
+  }
+  #label{
+	  margin-top: 10px;
+  }
+ </style>
 </head>
  <body>
+  <div class="form-div">
+  
   <form method="post" action ="index.php" >
-  <fieldset> 
-   <label for="username" > username: 
-   </label> <input type="text" name="username" /><br>
-   <label for="password"> password :
-   </label> <input type="password" name="password" /> <br>
-   <input type="submit" value="login" />
-  </fieldset>
+    <fieldset> 
+     <label for="username" > <b> USERNAME </b>: 
+     </label> <input type="text" name="username" />
+      <br>
+     <div id="label">
+      <label for="password"><b> PASSWORD <b> :
+      </label> <input type="password" name="password" /> 
+     <div>
+     <br>
+     <input class="login" type="submit" value="LOGIN" />
+    </fieldset>
   </form>
-  <a href="register.php">No account? register here!
-  </a>
+  <b>No account?</b><a href="register.php">REGISTER HERE!</a>
+  </div>
  </body>
 </html>

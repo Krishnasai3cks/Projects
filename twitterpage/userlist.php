@@ -18,18 +18,46 @@
 	return $array;
  }
 ?>
-<html><head> <title> Twitter Clone </title> </head>
+<html><head> <title> Twitter Clone </title> 
+<style>
+ .userlistbig{
+	background-color: pink;
+	min-height: 100%;
+
+margin: auto;
+width: 50%;
+border: 3px solid black;
+padding: 10px;
+	 display: flex;
+	 flex-direction: column;
+	 justify-content: center;
+	 align-items: center;
+ }
+ .followers{
+	padding: 0;
+		margin: 5px;
+		border: 2px solid black;
+		width: 500;
+		text-align: center;
+ }
+ a{
+	text-decoration: none;
+    font-size: 20px;
+ }
+</style>
+</head>
 <body>
+ <div class="userlistbig">
  <?php include('header.php'); ?>
- <div>
+ <div class="followers">
   <p> <b> List of users: </b> </p>
   <?php  
     
 	 $user_list = get_user_list($conn);
 	 foreach($user_list as $user){
-		 echo '<span>'. $user['username'].'</span>';
+		 
 		 $auid = $user['id'];
-		 echo '[<a href="profile.php?id=' . $auid . '">Visit Profile</a>]';
+		 echo '[<a href="profile.php?id=' . $auid . '">'.$user['username'].'</a>]';
 		 $res= mysqli_query($conn,"select exists(select * from following where user='".$auid."' and follower='".$_SESSION['username']."') as a") or die(mysqli_error($conn));
 		 $b=mysqli_fetch_object($res)->a;
 		 if ($auid != $_SESSION['username'])
@@ -44,6 +72,7 @@
 	
 	
  ?>
+ </div>
  </div>
 </body>
 </html>
