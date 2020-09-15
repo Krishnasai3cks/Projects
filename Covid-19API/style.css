@@ -5,16 +5,27 @@
 
 body {
     display: flex;
-    flex-wrap: wrap;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
     font-family: Montserrat, Helvetica, Arial, sans-serif;
     background: url('https://images.unsplash.com/photo-1502920514313-52581002a659?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1047&q=80');
 }
 
+#details-div {
+    display: flex;
+    flex-wrap: wrap;
+    width: 140vh;
+    height: 60vh;
+}
+
 .div {
-    width: 20vh;
+    width: 20vw;
     height: 20vh;
     display: flex;
-    font-size: 70%;
+    font-size: 100%;
+    margin: 1vh;
+    border: 2px solid red;
     font-weight: bold;
     text-align: center;
     justify-content: center;

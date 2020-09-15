@@ -37,7 +37,8 @@ function weatherFunction(country) {
             "#33FF33",
             "#6680B3",
             "#66991A",
-            "#CC80CC",
+            "#FF80CC",
+            "#ff4444",
             "#66664D",
         ];
         for (var i in details) {
@@ -47,7 +48,7 @@ function weatherFunction(country) {
             a.innerHTML = `${ids[i].toUpperCase()} - ${details[i]}`;
             $(a).addClass("div");
             $(a).css({ "background-color": colorArray[i] });
-            $("body").append(a);
+            $("#details-div").append(a);
         }
     });
 }
