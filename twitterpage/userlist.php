@@ -37,7 +37,7 @@ padding: 10px;
 	padding: 0;
 		margin: 5px;
 		border: 2px solid black;
-		width: 500;
+		width: 100%;
 		text-align: center;
  }
  a{
