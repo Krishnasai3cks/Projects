@@ -79,7 +79,6 @@ def end():
     head.direction = "stop"
     score = 0
     delay = 0.1
-    print(score, delay)
     pen.clear()
     for i in boxes:
         i.goto(500, 500)
